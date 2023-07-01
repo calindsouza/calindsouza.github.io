@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to My Resume</title>
+    <style>
+        body {
+            background-image: url("images/bg1.jpg");
+            background-size: cover;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+        h1 {
+            color: rgb(187, 22, 22);
+            font-size: 40px;
+            margin-top: 200px;
+            animation: pop-up 2s ease-in-out forwards;
+        
+        }
+        a {
+            color: rgb(198, 56, 56);
+            text-decoration: none;
+            font-size: 25px;
+            display: block;
+            margin: 10px;
+        }
+        p{  font-size: 30px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            animation: pop-up 3s ease-in-out forwards;
+        }
+        @keyframes pop-up {
+            0% {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+     <script>
+        // Function to increment and display the visit counter
+        function incrementCounter() {
+          if (typeof(Storage) !== "undefined") {
+            if (localStorage.visitCount) {
+              localStorage.visitCount = Number(localStorage.visitCount) + 1;
+            } else {
+              localStorage.visitCount = 1;
+            }
+            document.getElementById("counter").textContent = "Visitors: " + localStorage.visitCount;
+          } else {
+            console.log("Local storage is not supported.");
+          }
+        }
+    
+        // Update the counter on page load
+        window.onload = function() {
+          incrementCounter();
+        };
+        
+
+function updateServerTime() {
+  var serverTime = new Date().toLocaleString();
+  document.getElementById('serverTime').textContent = serverTime;
+}
+setInterval(updateServerTime, 1000);
+      </script>
+      
+</head>
+<body>
+    <div style="text-align: right;">
+        <div id="counter"></div>
+    </div>
+   
+    <h1>Welcome &#x1F609;</h1>
+    <p>
+     <a href="bio.html">Bio</a>
+    <a href="qualification.html">Qualification</a>
+    <a href="achievement.html">Achievement</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    
+    
+</p>
+<footer>
+<div class="digital-clock">
+  Server Time: <span id="serverTime"></span>
+</div>
+</footer>
+
+</body>
+</html>
